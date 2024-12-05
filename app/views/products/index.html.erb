@@ -1,0 +1,35 @@
+<h2>Productos</h2>
+<%= link_to 'Añadir Producto', new_product_path %>
+<table class="product-table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio Unitario</th>
+            <th>Stock</th>
+            <th>Categoría</th>
+            <th>Tamaño</th>
+            <th>Color</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @products.each do | product | %>
+            <tr>
+                <td><%= product.name %></td>
+                <td><%= product.description %></td>
+                <td><%= product.unit_price %></td>
+                <td><%= product.stock %></td>
+                <td><%= product.category %></td>
+                <td><%= product.size %></td>
+                <td><%= product.color %></td>
+                <td>
+                    <%= link_to 'Detalle', product_path(product) %>
+                    <%= link_to 'Modificar', edit_product_path(product) %>
+                    <%= link_to 'Eliminar', product_path(product), data: { turbo_method: :delete, turbo_confirm: '¿Estas seguro que quieres eliminar el producto?'} %>
+                    <button class="btn update-stock-btn" onclick="updateStock('<%= product.id %>')">Actualizar Stock</button>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
