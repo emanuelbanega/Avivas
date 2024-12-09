@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
     def index
-        @products = Product.all
+        @products = Product.where(removal_date: nil)
     end
 
     def show
@@ -37,9 +37,12 @@ class ProductsController < ApplicationController
 
     def destroy
         @product = Product.find(params[:id])
-        @product.destroy
 
-        redirect_to products_path, notice: '¡Producto eliminado exitosamente!', status: :see_other
+        if @product.soft_delete
+            redirect_to products_path, notice: '¡Producto eliminado exitosamente!', status: :see_other
+        else
+        redirect_to products_path, alert: 'Hubo un problema al eliminar el producto.'
+        end
     end
 
     private

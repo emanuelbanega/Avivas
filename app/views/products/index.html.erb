@@ -24,9 +24,9 @@
                 <td><%= product.size %></td>
                 <td><%= product.color %></td>
                 <td>
-                    <%= link_to 'Detalle', product_path(product) %>
-                    <%= link_to 'Modificar', edit_product_path(product) %>
-                    <%= link_to 'Eliminar', product_path(product), data: { turbo_method: :delete, turbo_confirm: '¿Estas seguro que quieres eliminar el producto?'} %>
+                    <%= link_to 'Detalle', product_path(product), class: 'btn detail-btn' %>
+                    <%= link_to 'Modificar', edit_product_path(product), class: 'btn modify-btn' %>
+                    <%= link_to 'Eliminar', product_path(product), data: { turbo_method: :delete, turbo_confirm: '¿Estas seguro que quieres eliminar el producto?'}, class: 'btn delete-btn' %>
                     <button class="btn update-stock-btn" onclick="updateStock('<%= product.id %>')">Actualizar Stock</button>
                 </td>
             </tr>

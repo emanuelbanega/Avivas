@@ -1,0 +1,83 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #444;
+  font-size: 24px;
+}
+
+/* Ticket container */
+.ticket {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Ticket item (each row) */
+.ticket-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s;
+}
+
+.ticket-item:hover {
+  background-color: #eef1f3;
+}
+
+/* Label for the fields */
+.ticket-item .label {
+  font-weight: bold;
+  color: #2a3a3f;
+  width: 180px;
+  font-size: 16px;
+}
+
+/* Value for the fields */
+.ticket-item .value {
+  color: #555;
+  font-size: 16px;
+  font-style: italic;
+  text-align: right;
+  flex-grow: 1;
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 768px) {
+  .ticket {
+    padding: 15px;
+  }
+
+  .ticket-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .ticket-item .label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .ticket-item .value {
+    width: 100%;
+    text-align: left;
+  }
+}

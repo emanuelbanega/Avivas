@@ -1,0 +1,174 @@
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .product-table th,
+  .product-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center; /* Centra el texto horizontalmente */
+    vertical-align: middle; /* Centra el texto verticalmente */
+  }
+  
+  .product-table th {
+    background-color: lightcoral;
+    font-weight: bold;
+    text-align: center; 
+    vertical-align: middle; 
+  }
+  
+  .product-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .product-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .product-table td {
+    font-size: 14px;
+  }
+  
+  .btn {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  .detail-btn {
+    background-color: #b1af2c;
+    color: white;
+  }
+
+  .modify-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .update-stock-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  
+/* Estilo general para el formulario */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd; /* Borde ligeramente más marcado */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Espaciado entre los campos del formulario */
+form label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="decimal"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc; /* Borde más suave */
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+/* Borde al enfocar los campos */
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form input[type="decimal"]:focus,
+form textarea:focus {
+  border-color: #4CAF50; /* Borde verde al enfocar */
+  outline: none;
+}
+
+/* Espaciado entre los campos del formulario */
+form div {
+  margin-bottom: 20px;
+}
+
+/* Estilo para los botones */
+form input[type="submit"],
+form .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid #4CAF50; /* Borde más suave */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;  /* Los botones ocuparán el 100% del ancho disponible */
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Borde más marcado y cambio de color al pasar el mouse */
+form input[type="submit"]:hover,
+form .btn:hover {
+  background-color: #45a049;
+  border-color: #45a049;
+}
+
+/* Alineación y tamaño de los botones "Guardar" y "Cancelar" */
+form .button-group {
+  display: flex;
+  justify-content: space-between; /* Alinea los botones de manera equidistante */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+form .btn {
+  width: 48%; /* Ambos botones ocuparán casi el mismo ancho, dejando un pequeño margen entre ellos */
+}
+
+/* Estilo para el botón cancelar */
+form .btn.cancel-btn {
+  background-color: #f44336;
+  border-color: #f44336; /* Borde rojo para el botón cancelar */
+}
+
+form .btn.cancel-btn:hover {
+  background-color: #e53935;
+  border-color: #e53935;
+}
+
+/* Estilo para los campos con error */
+form .error {
+  color: #f44336;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Estilo para los mensajes de éxito */
+form .success {
+  color: #4CAF50;
+  font-size: 14px;
+  margin-top: 5px;
+}
