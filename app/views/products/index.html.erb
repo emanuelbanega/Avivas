@@ -1,5 +1,11 @@
 <h2>Productos</h2>
-<%= link_to 'Añadir Producto', new_product_path %>
+<div class="product-actions">
+    <%= link_to 'Añadir Producto', new_product_path, class: 'btn add-product-btn' %>
+    <%= form_with url: products_path, method: :get, class: 'search-form' do |form| %>
+        <%= form.text_field :name, placeholder: 'Buscar producto', onChange: 'this.form.requestSubmit()', value: params[:name], class: 'search-input' %>
+        <%= form.select :order_by, options_for_select([["Más Caros","expensive"], ["Más Baratos","cheapest"], ["A - Z","ascendent"], ["Z - A","descendent"]], params[:order_by]), {}, { onChange: "this.form.requestSubmit()"} %>
+    <% end %>
+</div>
 <table class="product-table">
     <thead>
         <tr>
@@ -26,7 +32,7 @@
                 <td>
                     <%= link_to 'Detalle', product_path(product), class: 'btn detail-btn' %>
                     <%= link_to 'Modificar', edit_product_path(product), class: 'btn modify-btn' %>
-                    <%= link_to 'Eliminar', product_path(product), data: { turbo_method: :delete, turbo_confirm: '¿Estas seguro que quieres eliminar el producto?'}, class: 'btn delete-btn' %>
+                    <%= link_to 'Eliminar', product_path(product), data: { turbo_method: :delete, turbo_confirm: "¿Estás seguro de que quieres eliminar el producto #{product.name}?"}, class: 'btn delete-btn' %>
                     <button class="btn update-stock-btn" onclick="updateStock('<%= product.id %>')">Actualizar Stock</button>
                 </td>
             </tr>

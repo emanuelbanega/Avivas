@@ -1,6 +1,18 @@
 class ProductsController < ApplicationController
     def index
         @products = Product.where(removal_date: nil)
+        if params[:name].present?
+            @products = @products.where("name = ?", params[:name])
+        end
+        if params[:order_by].present?
+            order_by = {
+                "expensive" => "unit_price DESC",
+                "cheapest" => "unit_price ASC",          
+                "descendent" => "name DESC",
+                "ascendent" => "name ASC",
+            }.fetch(params[:order_by], "name ASC")
+            @products = @products.order(order_by)
+        end
     end
 
     def show
