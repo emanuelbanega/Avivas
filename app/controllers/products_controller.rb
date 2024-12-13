@@ -4,15 +4,12 @@ class ProductsController < ApplicationController
         if params[:name].present?
             @products = @products.where("name = ?", params[:name])
         end
-        if params[:order_by].present?
-            order_by = {
-                "expensive" => "unit_price DESC",
-                "cheapest" => "unit_price ASC",          
-                "descendent" => "name DESC",
-                "ascendent" => "name ASC",
-            }.fetch(params[:order_by], "name ASC")
-            @products = @products.order(order_by)
-        end
+        order_by = {
+            expensive: "unit_price DESC",
+            cheapest: "unit_price ASC",          
+            descendent: "name DESC",
+        }.fetch(params[:order_by]&.to_sym, "name ASC")
+        @products = @products.order(order_by)
     end
 
     def show
