@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   get "storefront/index"
   delete '/products:id', to: 'products#destroy'
   patch '/products:id', to: 'products#update'
