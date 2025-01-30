@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get "storefront/index"
   delete '/products:id', to: 'products#destroy'
   patch '/products:id', to: 'products#update'
   post '/products', to: 'products#create'
@@ -7,11 +9,5 @@ Rails.application.routes.draw do
   get '/products:id', to:'products#show', as: :product
   get '/products/new', to:'products#new', as: :new_product
 
-  delete '/users:id', to: 'users#destroy'
-  patch '/users:id', to: 'users#update'
-  post '/users', to: 'users#create'
-  get '/users/:id/edit', to: 'users#edit', as: :edit_user
-  get '/users', to: 'users#index'
-  get '/users:id', to:'users#show', as: :user
-  get '/users/new', to:'users#new', as: :new_user
+  get '/storefront', to: 'storefront#index', as: :storefront
 end

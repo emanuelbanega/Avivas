@@ -1,0 +1,45 @@
+<div class="filter-form">
+    <%= form_with url: storefront_index_path, method: :get, local: true do |form| %>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="category">Categoría:</label>
+          <%= form.select :category, 
+                options_for_select([["Todo", "all"]] + Product.distinct.pluck(:category).map { |c| [c, c] }, params[:category]), 
+                {}, 
+                { class: "form-select" } %>
+        </div>
+    
+        <div class="form-group">
+          <label for="query">Buscar:</label>
+          <%= form.text_field :query, value: params[:query], placeholder: "Buscar por nombre o descripción", class: "form-control" %>
+        </div>
+    
+        <div class="form-group">
+          <%= form.submit "Filtrar", class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  
+  <div class="product-list">
+    <h2>Productos Disponibles</h2>
+    <% if @products.any? %>
+      <ul class="products">
+        <% @products.each do |product| %>
+          <li class="product-card">
+            <strong><%= product.name %></strong><br>
+            <%= product.description %><br>
+            Precio: $<%= product.unit_price %><br>
+            Stock: <%= product.stock %><br>
+          </li>
+        <% end %>
+      </ul>
+
+     <!-- Enlaces de paginación -->
+    <div class="pagination">
+      <%= paginate @products %>
+    </div>
+    <% else %>
+        <p>No hay productos que coincidan con tu búsqueda.</p>
+    <% end %>
+  </div>

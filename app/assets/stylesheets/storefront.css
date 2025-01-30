@@ -1,0 +1,155 @@
+/* Estilos para la lista de productos */
+.product-list {
+    margin: 20px;
+  }
+  
+  .product-list h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+  }
+  
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .product-card strong {
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  .product-card p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #555;
+  }
+  
+  .product-card .price {
+    font-weight: bold;
+    color: #4CAF50;
+  }
+  
+  .product-card .stock {
+    font-size: 0.9em;
+    color: #f44336;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+
+  /* Contenedor de la paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Estilos para los botones de paginación */
+  .pagination a {
+    padding: 5px 10px;
+    margin: 0 3px;
+    background-color: #f1f1f1;
+    color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid #ccc; /* Borde del botón */
+  }
+  
+  /* Efecto cuando pasas el cursor sobre el botón */
+  .pagination a:hover {
+    background-color: #4CAF50; /* Fondo verde al pasar el cursor */
+    color: white; /* Texto blanco al pasar el cursor */
+    border-color: #4CAF50; /* El borde también se ilumina */
+  }
+  
+  /* Estilo para la página seleccionada */
+  .pagination .current {
+    background-color: #4CAF50; /* Fondo verde para la página actual */
+    color: white; /* Texto blanco para la página actual */
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  /* Efecto cuando el botón está activo (por ejemplo, presionado) */
+  .pagination a:active {
+    background-color: #45a049; /* Fondo ligeramente más oscuro cuando se presiona */
+  }
+
+/* Contenedor del formulario */
+.filter-form {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Fila de elementos en el formulario */
+.filter-form .form-row {
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente */
+  justify-content: flex-start; /* Alinea todos los elementos al principio */
+  gap: 10px; /* Espacio entre los elementos */
+  flex-wrap: wrap; /* Hace que los elementos se ajusten si no caben en una fila */
+}
+
+/* Estilo para los grupos de formulario */
+.filter-form .form-group {
+  display: flex;
+  flex-direction: column; /* Asegura que las etiquetas estén arriba de los inputs */
+  margin: 0;
+  flex-grow: 1; /* Hace que los inputs crezcan y ocupen el espacio disponible */
+}
+
+/* Estilos para los campos del formulario */
+.filter-form .form-select,
+.filter-form .form-control {
+  width: 100%; /* Hace que los inputs ocupen todo el espacio disponible */
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 0;
+}
+
+/* Estilo para el botón de envío */
+.filter-form .btn-primary {
+  padding: 5px 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center; /* Alinea el botón con los inputs en el centro */
+  margin-top: 25px;
+}
+
+/* Efecto hover para el botón */
+.filter-form .btn-primary:hover {
+  background-color: #0056b3;
+}
